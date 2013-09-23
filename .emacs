@@ -1,8 +1,7 @@
 ;; .emacs
 ;;
-;; last-modified: <2013-09-05 19:49:35 golden@asterix>
+;; last-modified: <2013-09-14 16:10:53 golden@asterix>
 ;;======================================================================================================================
-
 
 ;;{{{ toggle-fullscreen      ........................................................................................
 
@@ -21,6 +20,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(backup-directory-alist (quote (("." . ".~"))))
  '(column-number-mode t)
  '(develock-max-column-plist (quote (emacs-lisp-mode t lisp-interaction-mode t change-log-mode t texinfo-mode t c-mode t c++-mode t java-mode t jde-mode t html-mode t cperl-mode t perl-mode t mail-mode t message-mode t cmail-mail-mode t tcl-mode t ruby-mode t)))
  '(display-time-mode t)
@@ -38,7 +38,6 @@
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil)
  '(truncate-lines t))
-       ;;
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -83,7 +82,7 @@
 ;;{{{ folding mode           ........................................................................................
 
 (load "folding" 'nomessage 'noerror)
-
+(folding-add-to-marks-list 'css-mode "/* {{{ " "/* }}} */" " */")
 (folding-add-to-marks-list 'html-mode  "<!-- {{{ "  "<!-- }}} -->"  " -->"  t )
 
 (folding-mode-add-find-file-hook)
@@ -98,8 +97,7 @@
 (setq time-stamp-start  "[lL]ast-[mM]odified:[ 	]+\\\\?[\"<]+" )
 
 ;;}}}
-
-;;{{{ cc-mode
+;;{{{ cc-mode                ........................................................................................
 
 ;; create golden style
 (defconst golden-c-style
@@ -299,6 +297,27 @@
 ;;}}}
 
 ;;======================================================================================================================
+
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+;; mozrepl - https://github.com/bard/mozrepl/wiki
+
+(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
+
+(defun javascript-custom-setup ()
+  (moz-minor-mode 1))
+
+(add-hook 'javascript-mode-hook 'javascript-custom-setup)
+
+
+(defalias 'list-buffers 'ibuffer)
+
+(setq display-time-24hr-format t)
+(display-time-mode t)
+
+(setq frame-title-format '(:eval (concat "emacs: " (buffer-name))))
 
 ;; Local Variables:
 ;; mode: emacs-lisp
