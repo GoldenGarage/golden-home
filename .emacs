@@ -1,6 +1,6 @@
 ;; .emacs
 ;;
-;; last-modified: <2013-12-17 10:30:41 golden@asterix>
+;; last-modified: <2013-12-17 12:09:48 golden@asterix>
 ;;=====================================================================================================================
 
 (toggle-scroll-bar -1)
@@ -27,7 +27,7 @@
  '(backup-directory-alist (quote (("." . ".~"))))
  '(column-number-mode t)
  '(develock-max-column-plist (quote (emacs-lisp-mode t lisp-interaction-mode t change-log-mode t texinfo-mode t c-mode t c++-mode t java-mode t jde-mode t html-mode t cperl-mode t perl-mode t mail-mode t message-mode t cmail-mail-mode t tcl-mode t ruby-mode t)))
- '(dired-listing-switches "-alX")
+ '(dired-listing-switches "-al")
  '(display-time-mode t)
  '(fill-column 120)
  '(fringe-mode (quote (nil . 0)) nil (fringe))
