@@ -1,9 +1,13 @@
 ;; .emacs
 ;;
-;; last-modified: <2013-09-14 16:10:53 golden@asterix>
-;;======================================================================================================================
+;; last-modified: <2013-12-17 10:30:41 golden@asterix>
+;;=====================================================================================================================
 
-;;{{{ toggle-fullscreen      ........................................................................................
+(toggle-scroll-bar -1)
+(tool-bar-mode     -1)
+(menu-bar-mode     -1)
+
+;;{{{ toggle-fullscreen      .......................................................................................
 
 ;; (defun toggle-fullscreen ()
 ;;   (interactive)
@@ -13,7 +17,7 @@
 ;; (toggle-fullscreen)
 
 ;;}}}
-;;{{{ custom                 ........................................................................................
+;;{{{ custom                 .......................................................................................
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -23,6 +27,7 @@
  '(backup-directory-alist (quote (("." . ".~"))))
  '(column-number-mode t)
  '(develock-max-column-plist (quote (emacs-lisp-mode t lisp-interaction-mode t change-log-mode t texinfo-mode t c-mode t c++-mode t java-mode t jde-mode t html-mode t cperl-mode t perl-mode t mail-mode t message-mode t cmail-mail-mode t tcl-mode t ruby-mode t)))
+ '(dired-listing-switches "-alX")
  '(display-time-mode t)
  '(fill-column 120)
  '(fringe-mode (quote (nil . 0)) nil (fringe))
@@ -38,7 +43,6 @@
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil)
  '(truncate-lines t))
-
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -47,13 +51,13 @@
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 68 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 ;;}}}
-;;{{{ start server           ........................................................................................
+;;{{{ start server           .......................................................................................
 
 (server-start)
 
 
 ;;}}}
-;;{{{ org mode               ........................................................................................
+;;{{{ org mode               .......................................................................................
 
 ;;[[file:~/notes.org][notes file]]
 
@@ -79,7 +83,7 @@
 (define-key global-map "\C-cc" 'org-capture)
 
 ;;}}}
-;;{{{ folding mode           ........................................................................................
+;;{{{ folding mode           .......................................................................................
 
 (load "folding" 'nomessage 'noerror)
 (folding-add-to-marks-list 'css-mode "/* {{{ " "/* }}} */" " */")
@@ -88,7 +92,7 @@
 (folding-mode-add-find-file-hook)
 
 ;;}}}
-;;{{{ time-stamp mode        ........................................................................................
+;;{{{ time-stamp mode        ..........................................................................................
 
 (load "time-stamp" 'nomessage 'noerror)
 (add-hook 'before-save-hook 'time-stamp)
@@ -97,7 +101,7 @@
 (setq time-stamp-start  "[lL]ast-[mM]odified:[ 	]+\\\\?[\"<]+" )
 
 ;;}}}
-;;{{{ cc-mode                ........................................................................................
+;;{{{ cc-mode                .......................................................................................
 
 ;; create golden style
 (defconst golden-c-style
@@ -141,10 +145,22 @@
 (add-hook 'c-mode-common-hook 'golden-c-mode-common-hook)
 
 ;;}}}
+;;{{{ javascript (mozrepl)   .......................................................................................
 
-;; rg-commands .........................................................................................................
+;; mozrepl - https://github.com/bard/mozrepl/wiki
 
-;;{{{ rg-set-registers       ........................................................................................
+(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
+
+(defun javascript-custom-setup ()
+  (moz-minor-mode 1))
+
+(add-hook 'javascript-mode-hook 'javascript-custom-setup)
+
+;;}}}
+
+;; rg-commands ........................................................................................................
+
+;;{{{ rg-set-registers       .......................................................................................
 
 (fset 'rg-set-registers
 
@@ -169,7 +185,7 @@
         ))
 
 ;;}}}
-;;{{{ rg-expand-char-to-fill ........................................................................................
+;;{{{ rg-expand-char-to-fill .......................................................................................
 
 (fset 'rg-expand-char-to-fill
 
@@ -194,7 +210,7 @@
           )))
 
 ;;}}}
-;;{{{ rg-move-up-folds       ........................................................................................
+;;{{{ rg-move-up-folds       .......................................................................................
 
 (fset 'rg-move-up-folds
 
@@ -211,7 +227,7 @@
         ))
 
 ;;}}}
-;;{{{ rg-move-down-folds     ........................................................................................
+;;{{{ rg-move-down-folds     .......................................................................................
 
 (fset 'rg-move-down-folds
 
@@ -229,7 +245,7 @@
         ))
 
 ;;}}}
-;;{{{ rg-switch-buffer-left  ........................................................................................
+;;{{{ rg-switch-buffer-left  .......................................................................................
 
 (fset 'rg-switch-buffer-left
 
@@ -243,7 +259,7 @@
         ))
 
 ;;}}}
-;;{{{ rg-switch-buffer-right ........................................................................................
+;;{{{ rg-switch-buffer-right .......................................................................................
 
 (fset 'rg-switch-buffer-right
 
@@ -258,7 +274,7 @@
 
 ;;}}}
 
-;;{{{ rg-define-keys         ........................................................................................
+;;{{{ rg-define-keys         .......................................................................................
 
 (fset 'rg-define-keys
 
@@ -296,21 +312,7 @@
 
 ;;}}}
 
-;;======================================================================================================================
-
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-
-;; mozrepl - https://github.com/bard/mozrepl/wiki
-
-(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
-
-(defun javascript-custom-setup ()
-  (moz-minor-mode 1))
-
-(add-hook 'javascript-mode-hook 'javascript-custom-setup)
-
+;;=====================================================================================================================
 
 (defalias 'list-buffers 'ibuffer)
 

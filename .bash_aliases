@@ -1,11 +1,27 @@
 # .bash_aliases
-# last-modified: <2013-09-05 20:14:33 golden@asterix>
+#
+# last-modified: <2013-12-17 10:53:29 golden@asterix>
+# ---------------------------------------------------------------------------------------------------------------------
 
-function em ()
+# ---------------------------------------------------------------------------------------------------------------------
+# em {file}
+#    connect the tty to an emacs-server
+
+function em()
 {
-     emacsclient --alternate-editor="" --tty $*
+    emacsclient --alternate-editor="" --tty $*
 }
 
+# ---------------------------------------------------------------------------------------------------------------------
+# sem {file}
+#    connect the tty to an emacs-server with root privileges
+
+function sem()
+{
+    sudo bash -c "emacsclient --alternate-editor='' --tty $*"
+}
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Local Variables:
 # mode: sh
 # End:
