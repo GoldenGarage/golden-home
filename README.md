@@ -1,8 +1,7 @@
-golden-home
-===========
+# golden-home
 
-<<<<<<< HEAD
-The home directory of the user: golden.
-=======
-.emacs, .bash_aliases and other configuration files of the user golden's home directory
->>>>>>> e4e6587bbae971dacdddab28f2bd8fd68be399c4
+  Configuration files from the home directory of the user: *golden*.
+
+| .bash_aliases  | bash functions and aliases (command shortcuts) |
+| .emacs         | emacs configuration                            |
+
