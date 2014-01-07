@@ -1,7 +1,9 @@
 # golden-home
 
-  Configuration files from the home directory of [mailto:golden@golden-garage.net].
-
+Configuration files from the home directory of [mailto:golden@golden-garage.net].
+  
+| File                 | Descrption                                       |
+| -------------------- | ------------------------------------------------ |
 | **.bash_aliases**    | bash functions and aliases (command shortcuts)   |
 | **.emacs**           | emacs configuration                              |
 | **.gitignore**       | select the files that are pushed to the repo     |
