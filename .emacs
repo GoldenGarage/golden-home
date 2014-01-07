@@ -1,11 +1,8 @@
+;;=====================================================================================================================
 ;; .emacs
 ;;
-;; last-modified: <2013-12-17 12:09:48 golden@asterix>
+;; last-modified: <2014-01-07 12:31:35 golden@golden-garage.net>
 ;;=====================================================================================================================
-
-(toggle-scroll-bar -1)
-(tool-bar-mode     -1)
-(menu-bar-mode     -1)
 
 ;;{{{ toggle-fullscreen      .......................................................................................
 
@@ -29,7 +26,7 @@
  '(develock-max-column-plist (quote (emacs-lisp-mode t lisp-interaction-mode t change-log-mode t texinfo-mode t c-mode t c++-mode t java-mode t jde-mode t html-mode t cperl-mode t perl-mode t mail-mode t message-mode t cmail-mail-mode t tcl-mode t ruby-mode t)))
  '(dired-listing-switches "-al")
  '(display-time-mode t)
- '(fill-column 120)
+ '(fill-column 119)
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(indent-tabs-mode nil)
  '(indicate-buffer-boundaries (quote left))
@@ -92,7 +89,7 @@
 (folding-mode-add-find-file-hook)
 
 ;;}}}
-;;{{{ time-stamp mode        ..........................................................................................
+;;{{{ time-stamp mode        .......................................................................................
 
 (load "time-stamp" 'nomessage 'noerror)
 (add-hook 'before-save-hook 'time-stamp)
@@ -155,6 +152,15 @@
   (moz-minor-mode 1))
 
 (add-hook 'javascript-mode-hook 'javascript-custom-setup)
+
+;;}}}
+
+;;{{{ miscellaneous          [list-buffers, display-time, 24hr-format] .............................................
+
+(defalias 'list-buffers 'ibuffer)
+
+(setq display-time-24hr-format t)
+(display-time-mode t)
 
 ;;}}}
 
@@ -313,14 +319,6 @@
 ;;}}}
 
 ;;=====================================================================================================================
-
-(defalias 'list-buffers 'ibuffer)
-
-(setq display-time-24hr-format t)
-(display-time-mode t)
-
-(setq frame-title-format '(:eval (concat "emacs: " (buffer-name))))
-
 ;; Local Variables:
 ;; mode: emacs-lisp
 ;; mode: folding

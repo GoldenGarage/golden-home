@@ -1,4 +1,29 @@
+#======================================================================================================================
+# .gitignore for golden-home
+#
+# Include files relevent to my linux development environment root directory.
+#
+# environment configuration
+# ~/.bash_aliases - command line shortcuts and tools
+# ~/.emacs        - emacs configuration
+# ~/.gitingore    - this file
+#
+# development notes and references
+# ~/Notes         - emacs org-mode files
+#
+# last-modified: <2014-01-07 12:00:56 golden@golden-garage.net>
+#======================================================================================================================
+
+# first: exclude everything
 *
+
+# include configuration files
 !.bash_aliases
 !.emacs
 !.gitignore
+
+
+# include notes and references
+!Notes
+
+#======================================================================================================================
