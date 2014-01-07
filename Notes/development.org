@@ -1,10 +1,11 @@
 * Development
-** References
+** GitHub
 *** [[http://net.tutsplus.com/tutorials/tools-and-tips/how-to-work-with-github-and-multiple-accounts/][using github with multiple accounts]]
 
     So you have a personal GitHub account; everything is working perfectly. But then, you get a new job, and now need
     to have the ability to push and pull to multiple accounts. How do you do that? I’ll show you how!
 
+** Markdown
 *** [[http://daringfireball.net/projects/markdown/syntax][Markdown: Syntax]]
 
     Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
@@ -14,4 +15,14 @@
     has been influenced by several existing text-to-HTML filters — including Setext, atx, Textile, reStructuredText,
     Grutatext, and EtText — the single biggest source of inspiration for Markdown’s syntax is the format of plain text
     email.
+
+*** [[https://help.github.com/articles/github-flavored-markdown][GitHub Flavored Markdown]]
+
+    GitHub uses what we're calling "GitHub Flavored Markdown" (GFM) for messages, issues, and comments. It differs
+    from standard Markdown (SM) in a few significant ways and adds some additional functionality.
+
+*** [[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet][Markdown Cheatsheet]]
+
+    This is intended as a quick reference and showcase. For more complete info, see [[http://daringfireball.net/projects/markdown/][John Gruber's original spec]] and
+    the [[https://help.github.com/articles/github-flavored-markdown][Github-flavored Markdown info page]].
 
