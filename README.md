@@ -1,6 +1,6 @@
 # golden-home
 
-Configuration files from the home directory of [mailto:golden@golden-garage.net].
+Configuration files from the home directory of [[mailto:golden@golden-garage.net]].
   
 | File                 | Description                                      |
 | -------------------- | ------------------------------------------------ |
