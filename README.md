@@ -2,7 +2,7 @@
 
 Configuration files from the home directory of [mailto:golden@golden-garage.net].
   
-| File                 | Descrption                                       |
+| File                 | Description                                      |
 | -------------------- | ------------------------------------------------ |
 | **.bash_aliases**    | bash functions and aliases (command shortcuts)   |
 | **.emacs**           | emacs configuration                              |
