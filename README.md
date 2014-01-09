@@ -1,6 +1,6 @@
 # golden-home
 
-Configuration files from the home directory of golden at golden-garage.net.
+Desktop configuration files from golden-garage.net.
   
 | File                 | Description                                      |
 | -------------------- | ------------------------------------------------ |
