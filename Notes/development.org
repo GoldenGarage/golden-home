@@ -48,3 +48,44 @@
      to have the ability to push and pull to multiple accounts. How do you do that? I’ll show you how!
 
 
+
+** Tools
+
+*** [[http://www.openssh.com/][ssh]] (OpenSSH)
+
+    OpenSSH is a FREE version of the SSH connectivity tools that technical users of the Internet rely on. Users of
+    telnet, rlogin, and ftp may not realize that their password is transmitted across the Internet unencrypted, but it
+    is. OpenSSH encrypts all traffic (including passwords) to effectively eliminate eavesdropping, connection
+    hijacking, and other attacks. Additionally, OpenSSH provides secure tunneling capabilities and several
+    authentication methods, and supports all SSH protocol versions.
+
+**** [[http://www.linuxproblem.org/art_9.html][SSH Login wihtout a password]]
+
+     You want to use Linux and OpenSSH to automize your tasks. Therefore you need an automatic login from host A /
+     user a to Host B / user b. You don't want to enter any passwords, because you want to call ssh from a within a
+     shell script.
+
+     : a@A:~> cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys'
+     : b@B's password: 
+
+**** [[http://geekswing.com/geek/unix/how-to-ssh-login-without-a-password-using-ssh-keygen-quick-tutorial/][How To SSH Login Without A Password: Using SSH-Keygen Quick Tutorial]]
+
+     A quick (very quick!) set of instructions on how to set up ssh login without password using ssh-keygen and
+     ssh-copy-id. I was “inspired” to write this because of my “discovery” of ssh-copy-id! Wow did this save a few
+     hair-tearing headaches!
+     
+     : ssh-copy-id -i ~/.ssh/id_rsa.pub root@node02
+
+**** [[http://stackoverflow.com/questions/2419566/best-way-to-use-multiple-ssh-private-keys-on-one-client][best way to use multiple ssh private keys on one client]]
+
+     From my .ssh/config:
+
+     : Host           friendly-name
+     : HostName       long.and.cumbersome.server.name
+     : IdentityFile   ~/.ssh/private_ssh_file
+     : User           username-on-remote-machine
+
+     Now you can connect using the friendly-name:
+
+     : ssh friendly-name
+
