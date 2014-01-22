@@ -1,7 +1,7 @@
 ;;=====================================================================================================================
 ;; .emacs
 ;;
-;; last-modified: <2014-01-07 12:31:35 golden@golden-garage.net>
+;; last-modified: <2014-01-21 16:06:36 golden@golden-garage.net>
 ;;=====================================================================================================================
 
 ;;{{{ toggle-fullscreen      .......................................................................................
@@ -32,6 +32,7 @@
  '(indicate-buffer-boundaries (quote left))
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
+ '(mail-host-address "golden-garage.net")
  '(org-directory "~/Lab/journal")
  '(org-modules (quote (org-bbdb org-bibtex org-checklist org-docview org-git-link org-gnus org-habit org-info org-irc org-jsinfo org-mew org-mhe org-rmail org-vm org-w3m org-wl)))
  '(scroll-bar-mode nil)
@@ -96,6 +97,7 @@
 
 (setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S %u@%h"   )
 (setq time-stamp-start  "[lL]ast-[mM]odified:[ 	]+\\\\?[\"<]+" )
+(setq time-stamp-line-limit 32)
 
 ;;}}}
 ;;{{{ cc-mode                .......................................................................................
