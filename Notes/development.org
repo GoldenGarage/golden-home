@@ -10,7 +10,7 @@
 
      : sudo em /etc/xdg/lxsession/LXDE/autostart
      
-**** [[][Ubuntu Server VM Console Tweaks]]
+**** [[http://jonforums.github.io/general/2012/12/18/ubuntu-console-vm.html][Ubuntu Server VM Console Tweaks]]
 
      "On most modern systems, when you fire up a freshly installed console-based VM, you're greated by a tiny little window and terrible looking fonts. If you installed a GUI-based VM, you can change the default graphics behavior by building and installing the Guest Additions.
 
