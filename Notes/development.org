@@ -137,6 +137,6 @@
     : sudo apt-get update
     : sudo apt-get install mongodb-10gen
     
-    The packages include various control scripts, including the init script /etc/rc.d/init.d/mongodb. 
-    These packages configure MongoDB using the /etc/mongodb.conf file in conjunction with the control scripts.
+    The packages include various control scripts, including the init script =/etc/rc.d/init.d/mongodb=. 
+    These packages configure MongoDB using the =/etc/mongodb.conf= file in conjunction with the control scripts.
     
