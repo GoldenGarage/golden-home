@@ -140,3 +140,12 @@
     The packages include various control scripts, including the init script =/etc/rc.d/init.d/mongodb=. 
     These packages configure MongoDB using the =/etc/mongodb.conf= file in conjunction with the control scripts.
     
+*** /etc/sudoers (sudo)
+
+**** [[http://askubuntu.com/questions/147241/execute-sudo-without-password][Execute =sudo= without a password]]
+
+    : sudo visudo
+    
+    : # allow the 'sudo' user group to execute sudo without a password
+    : %sudo ALL=(ALL) NOPASSWD: ALL
+    
