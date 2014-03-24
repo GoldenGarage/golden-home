@@ -46,7 +46,6 @@
 
 
 
-
 *** Javascript
 
 **** Libraries
@@ -125,7 +124,6 @@
 
      : ssh friendly-name
 
-
 *** [[http://www.mongodb.org/][mongodb-10gen]] (MongoDB)
 
     MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.
@@ -149,3 +147,12 @@
     : # allow the 'sudo' user group to execute sudo without a password
     : %sudo ALL=(ALL) NOPASSWD: ALL
     
+*** change host name
+
+    : $ emacs /etc/hostname
+    : $ # the new host name should be the only content
+    : 
+    : $ emacs /etc/hosts
+    : $ # change 127.0.1.1 so that it is mapped to the new host name
+
+    Reference: http://ubuntuforums.org/showthread.php?t=1636340
