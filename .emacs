@@ -1,7 +1,7 @@
 ;;=====================================================================================================================
 ;; .emacs
 ;;
-;; last-modified: <2014-01-21 16:06:36 golden@golden-garage.net>
+;; last-modified: <2014-11-18 10:15:54 golden@golden-garage.net>
 ;;=====================================================================================================================
 
 ;;{{{ toggle-fullscreen      .......................................................................................
@@ -21,7 +21,9 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(auto-revert-interval 1)
  '(backup-directory-alist (quote (("." . ".~"))))
+ '(coffee-tab-width 2)
  '(column-number-mode t)
  '(develock-max-column-plist (quote (emacs-lisp-mode t lisp-interaction-mode t change-log-mode t texinfo-mode t c-mode t c++-mode t java-mode t jde-mode t html-mode t cperl-mode t perl-mode t mail-mode t message-mode t cmail-mail-mode t tcl-mode t ruby-mode t)))
  '(dired-listing-switches "-al")
@@ -165,6 +167,8 @@
 (display-time-mode t)
 
 ;;}}}
+
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 
 ;; rg-commands ........................................................................................................
 
