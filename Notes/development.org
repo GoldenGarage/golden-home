@@ -9,6 +9,15 @@
      Changing the LXDE screen resolution is easy, but at first its not permanent. 
 
      : sudo em /etc/xdg/lxsession/LXDE/autostart
+     
+**** [[http://jonforums.github.io/general/2012/12/18/ubuntu-console-vm.html][Ubuntu Server VM Console Tweaks]]
+
+     : sudo emacs /etc/default/grub
+
+     modify the graphics mode configuration variable
+     : GRUB_GFXMODE=800x600x24
+
+     : sudo update-grub
 
 
 ** Languages
@@ -34,7 +43,6 @@
 
      This is intended as a quick reference and showcase. For more complete info, see [[http://daringfireball.net/projects/markdown/][John Gruber's original spec]] and
      the [[https://help.github.com/articles/github-flavored-markdown][Github-flavored Markdown info page]].
-
 
 
 
@@ -116,3 +124,35 @@
 
      : ssh friendly-name
 
+*** [[http://www.mongodb.org/][mongodb-10gen]] (MongoDB)
+
+    MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.
+
+**** [[http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/][Install MongoDB on Ubuntu]]
+
+    : sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+    : echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+    : sudo apt-get update
+    : sudo apt-get install mongodb-10gen
+    
+    The packages include various control scripts, including the init script =/etc/rc.d/init.d/mongodb=. 
+    These packages configure MongoDB using the =/etc/mongodb.conf= file in conjunction with the control scripts.
+    
+*** /etc/sudoers (sudo)
+
+**** [[http://askubuntu.com/questions/147241/execute-sudo-without-password][Execute =sudo= without a password]]
+
+    : sudo visudo
+    
+    : # allow the 'sudo' user group to execute sudo without a password
+    : %sudo ALL=(ALL) NOPASSWD: ALL
+    
+*** change host name
+
+    : $ emacs /etc/hostname
+    : $ # the new host name should be the only content
+    : 
+    : $ emacs /etc/hosts
+    : $ # change 127.0.1.1 so that it is mapped to the new host name
+
+    Reference: http://ubuntuforums.org/showthread.php?t=1636340
